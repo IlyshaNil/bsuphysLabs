@@ -1,4 +1,5 @@
 import numpy as np
+
 # выбор главного элемента
 def bubble_max_row(m, col):
     max_element = m[col][col]
@@ -25,7 +26,7 @@ def solve_gauss(m):
     #######################треугольная матрица###################
     elm = 0 
     for elm in range(0,4):
-       print(f'{m[elm]}') 
+       print(f'{m[elm]}')
     ##################################################
 
 
@@ -71,3 +72,5 @@ A = np.array(mLeft)
 B = np.array(mRight)
 X = np.array(solve_gauss(m)) 
 print(f'Вектор невязки: {B - A.dot(X)} \nОтвет: {X}')
+
+
