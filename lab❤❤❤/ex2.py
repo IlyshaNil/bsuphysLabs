@@ -1,5 +1,5 @@
 from math import *
-import scipy.integrate as spi #pip install scipy !!!!!!!!!!!!!!!!
+import scipy.integrate as spi 
 import numpy as np
 
 
