@@ -3,11 +3,6 @@ import scipy.integrate as spi
 import numpy as np
 
 
-#n = 100
-#a = 2.0
-#b = 4.0
-
-
 def f(x): return 1/(1 + sqrt(log(x)))
 
 
