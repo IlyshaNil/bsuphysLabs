@@ -41,6 +41,6 @@ for i in range(3, n):
     yGraph.append(y[i + 1])
 
 
-plt.plot(np.array(xGraph), np.array(yGraph)) #plt.plot(x, y)     #снача строит по точкам из таблицы, "r" red? потом второй график
+plt.plot(np.array(xGraph), np.array(yGraph)) #plt.plot(x, y) 
 plt.grid()
 plt.show()
