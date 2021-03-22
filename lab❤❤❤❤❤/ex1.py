@@ -25,7 +25,7 @@ def solution(dy1, dy0, fy):
     g4 = 4.50
     g5 = 0.3
     g6 = 4.7
-    n = 100
+    n = 1000
     yMax = 2
 
 
@@ -46,7 +46,7 @@ def solution(dy1, dy0, fy):
     k.append((dx**2 * r[0] * g2 + dx * (2 - dx * p[0]) * g3) / u)
     l.append(2 * g2 / u)
 
-    for i in range(1, n+1):
+    for i in range(0, n+1):
         u = 2 * dx**2 * q[i] - 4 - (2 - dx * p[i]) * l[i-1]
         k.append((2 * dx**2 * r[i] - (2-dx*p[i]) * k[i-1]) / u)
         l.append((2 + dx * p[i]) / u)
@@ -57,14 +57,17 @@ def solution(dy1, dy0, fy):
         #print(y[i])
         xGraph.append(a + i*dx) 
 
-    xGraph.reverse()  
+    xGraph.reverse()
+    jz = 0  
 
     y[n] = ((2 * dx * g6 + (k[n-1] - k[n] / l[n]) * g5) / (2 * dx * g4 + (l[n-1] - 1 / l[n]) * g5))
     for i in range(n-1, 0, -1):
         y[i] = k[i] - l[i] * y[i+1]
+        jz +=1
+        print(y[i])
+    print(jz)
 
-
-    #xGraph = numpy.linspace(-1000, 1000, 101)  
+    xGraph = numpy.linspace(a, b, len(y))  
     yGraph = numpy.array(y)  
 
     plt.plot(numpy.array(xGraph), yGraph)    
