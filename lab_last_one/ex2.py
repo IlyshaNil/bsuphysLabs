@@ -58,6 +58,17 @@ for j in range(1, m):
     for i in range(1, n):
         u[i, j+1] = alpha * (u[i+1,j] + u[i-1,j]) + 2*(1-alpha) * u[i,j] - u[i,j-1]
 
-plt.plot(x, u)    
+xGraph = []
+yGraph = []
+xGraph1 = []
+yGraph1 = []
+for i in range(0, n+1):
+    xGraph.append(x[i])
+    yGraph.append(u[i,0])
+    xGraph1.append(x[i])
+    yGraph1.append(u[i,m])
+
+
+plt.plot(np.array(xGraph), np.array(yGraph), np.array(xGraph1), np.array(yGraph1))    
 plt.grid()
 plt.show()

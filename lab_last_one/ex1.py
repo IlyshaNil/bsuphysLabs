@@ -64,7 +64,20 @@ for j in range(1, m+1):
 for i in range(n-1, 1, -1):
     u[i,j] = k[i]-l[i]*u[i+1,j]
 
-plt.plot(x, u)    
+#plt.plot(x, u)    
+#plt.grid()
+#plt.show()
+xGraph = []
+yGraph = []
+xGraph1 = []
+yGraph1 = []
+for i in range(0, n+1):
+    xGraph.append(x[i])
+    yGraph.append(u[i,0])
+    xGraph1.append(x[i])
+    yGraph1.append(u[i,m])
+
+
+plt.plot(np.array(xGraph), np.array(yGraph), np.array(xGraph1), np.array(yGraph1))    
 plt.grid()
-plt.show()
-          
+plt.show()          
